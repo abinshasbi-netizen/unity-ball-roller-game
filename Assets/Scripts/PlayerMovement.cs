@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 	public float moveForce = 10f;
 	private Vector2 moveInput;
 
+	public Transform cameratransform;
+
 
 	private void Awake()
 	{
@@ -49,11 +51,20 @@ public class PlayerMovement : MonoBehaviour
 
 	void Move()
 	{
-		Vector3 movement = new Vector3(
-		moveInput.x,
-		0f,
-		moveInput.y
-		);
+		Vector3 cameraForward = cameratransform.forward;
+		Vector3 cameraRight = cameratransform.right;
+
+		// remove vertical influence
+		cameraForward.y = 0f;
+		cameraRight.y = 0f;
+
+		cameraForward.Normalize();
+		cameraRight.Normalize();
+		
+
+		Vector3 movement =
+		cameraForward * moveInput.y +
+		cameraRight * moveInput.x;
 
 		rb.AddForce( movement * moveForce);
 	}
