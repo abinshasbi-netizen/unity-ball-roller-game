@@ -4,6 +4,7 @@ using UnityEngine;
 public class DisplayMessage : MonoBehaviour
 {
 	[SerializeField] TextMeshProUGUI text;
+	public bool isFinish;
 
 	[TextArea]
 	public string message;
@@ -15,6 +16,11 @@ public class DisplayMessage : MonoBehaviour
 			text.text = message;
 
 			text.gameObject.SetActive(true);
+
+			if (isFinish) {
+				GameplayManagement.Instance.Gameover();
+			}
+			
 		}
 	}
 
