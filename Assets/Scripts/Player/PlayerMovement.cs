@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
 	public Transform cameratransform;
 
+	public ParticleSystem moveParticles;
 
 	private void Awake()
 	{
@@ -42,6 +43,21 @@ public class PlayerMovement : MonoBehaviour
    void FixedUpdate()
 	{
 		Move();
+
+		if (rb.linearVelocity.magnitude > 0.5f)
+		{
+			if (!moveParticles.isPlaying)
+			{
+				moveParticles.Play();
+			}
+		}
+		else
+		{
+			if (moveParticles.isPlaying)
+			{
+				moveParticles.Stop();
+			}
+		}
 	}
 	// Update is called once per frame
 	void Update()
