@@ -4,7 +4,14 @@ public class StarCollect : MonoBehaviour
 {
 	private void OnTriggerEnter(Collider other)
 	{
-		gameObject.SetActive(false);
-		Audiomanagement.Instance.PlayCollect();
+	   if(other.CompareTag("Player")){
+
+			gameObject.SetActive(false);
+			Audiomanagement.Instance.PlayCollect();
+			ScoreManagement.Instance.ScoreUpdate();
+
+		} 
+
+		
 	}
 }
