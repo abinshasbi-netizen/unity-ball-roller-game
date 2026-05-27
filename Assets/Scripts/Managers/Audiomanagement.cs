@@ -24,6 +24,7 @@ public class Audiomanagement : MonoBehaviour
 		loopSource = gameObject.AddComponent<AudioSource>();
 
 		loopSource.loop = true;
+		loopSource.playOnAwake = false;
 	}
 
 	public void PlayCollect() => oneshotSource.PlayOneShot(collectclip);

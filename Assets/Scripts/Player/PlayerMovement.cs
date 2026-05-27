@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
 		Vector3 cameraForward = cameratransform.forward;
 		Vector3 cameraRight = cameratransform.right;
 
-		// remove vertical influence
+		
 		cameraForward.y = 0f;
 		cameraRight.y = 0f;
 
@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 		cameraRight.Normalize();
 		
 
-		Vector3 movement =
+		Vector3 movement = 
 		cameraForward * moveInput.y +
 		cameraRight * moveInput.x;
 
