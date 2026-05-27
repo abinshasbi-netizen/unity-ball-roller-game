@@ -113,6 +113,27 @@ Assets/
 
 ---
 
+## Screenshots
+
+### Main Menu
+Displays the game's entry interface and initializes the gameplay session.
+
+![Main Menu](Assets/Screenshots/main-menu.png)
+
+---
+
+### Gameplay Guidance System
+Trigger-based UI messages provide contextual gameplay instructions during traversal.
+
+![Gameplay Guidance](Assets/Screenshots/gameplay-guidance.png)
+
+---
+
+### Platform Traversal Gameplay
+Players navigate ramps, movable objects, and environmental traversal sections while collecting stars.
+
+![Platform Traversal](Assets/Screenshots/platform-traversal.png)
+
 ## Future Improvements
 
 - Multiple level support
